@@ -1,25 +1,20 @@
-# -*- coding: utf-8 -*-
-"""
-@author: jfeck
-
-"""
-
 import sys
 import os
 import win32com.client
-#import time
 
-path_script = os.path.realpath(__file__)
+script_path = os.path.realpath(__file__)
 #path_script = os.path.join(os.getcwd(), 'excel_update_application.py')
-path_project = os.path.dirname(path_script)
+project_path = os.path.dirname(script_path)
 
 # File to be updated 
-file_path = sys.argv[1]
+file_name = sys.argv[1]
+file_path = os.path.join(project_path, file_name)
 
 # Start Excel Instance
 excel = win32com.client.DispatchEx("Excel.Application")
 
-# Optional, e.g. if you want to debug
+# Command to open excel
+# I dont have a work arround to make it work being false
 excel.Visible = True
 
 wb = excel.Workbooks.Open(file_path)
@@ -30,13 +25,13 @@ analysis_addin.Connect = True
 
 excel.Application.Run("SAPExecuteCommand", "Refresh")
 
-# Refresh all data connections.
-#wb.RefreshAll()
-#time.sleep(5)
-
 # Save and close excel
 wb.Save()
 wb.Close()
+
+# Quit
+excel.Quit()
+del excel
 
 # Quit
 excel.Quit()
