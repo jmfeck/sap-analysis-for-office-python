@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 @author: jfeck
-@company: montblanc
 
 """
 
@@ -14,18 +13,16 @@ path_script = os.path.realpath(__file__)
 #path_script = os.path.join(os.getcwd(), 'excel_update_application.py')
 path_project = os.path.dirname(path_script)
 
-file_mapping_btq_galery_merged = sys.argv[1]
-path_mapping_gbu_per_user = os.path.join(path_project, file_mapping_btq_galery_merged)
+# File to be updated 
+file_path = sys.argv[1]
 
-# Start an instance of Excel
+# Start Excel Instance
 excel = win32com.client.DispatchEx("Excel.Application")
 
 # Optional, e.g. if you want to debug
-excel.WindowState = -4137
 excel.Visible = True
 
-
-wb = excel.Workbooks.Open(path_mapping_gbu_per_user)
+wb = excel.Workbooks.Open(file_path)
 
 analysis_addin = excel.COMAddIns("SapExcelAddIn")
 analysis_addin.Connect = False
