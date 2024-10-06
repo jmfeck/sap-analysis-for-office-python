@@ -1,5 +1,2 @@
-call activate sandbox
-python excel_update_application.py excel_sap_afo_to_update0.xlsx
-python excel_update_application.py excel_sap_afo_to_update1.xlsx
-python excel_update_application.py excel_sap_afo_to_update2.xlsx
+python excel_update_application.py excel_to_update.xlsx
 PAUSE
