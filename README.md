@@ -16,14 +16,9 @@ The batch script (`update_excel_report.bat`) provides a simple way to run the Py
 2. Place the following files in the same directory:
    - `excel_update_application.py` (the Python script)
    - `update_excel_report.bat` (the batch script)
-3. Open a Command Prompt and navigate to the directory containing these files.
-4. Run the batch file using the following command:
-   ```
-   update_excel_report.bat
-   ```
-   The batch file will execute the Python script with the Excel file `excel_to_update.xlsx` as the input.
-
-5. The script will open Excel, refresh the SAP data, save the changes, and then close Excel.
+3. Run the batch file update_excel_report.bat. The batch file will execute the Python script with the Excel file `excel_to_update.xlsx` as the input.
+4. The script will open Excel, refresh the SAP data, save the changes, and then close Excel.
+5. Keep an eye in the command prompt for errors - sometimes you might have issues with analysis for office (like it could be unabled) or your sap login - so the script can't run
 6. Press any key to close the Command Prompt window after the process completes.
 
 ## Customizing the Input File
